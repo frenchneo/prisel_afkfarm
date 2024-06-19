@@ -1,0 +1,30 @@
+!!! N'oubliez pas d'ajouter le métier et la catégorie à votre darkrpmodification !!!
+
+--darkrpmodification-master\lua\darkrp_customthings/jobs.lua
+
+TEAM_AFK = DarkRP.createJob("AFK FARM", {
+    color = Color(0, 0, 0, 255),
+    model = {"models/Humans/Group01/Female_01.mdl"},
+    description = [[Gagnez de l'argent en étant AFK - Disponible dès 23h]],
+    weapons = {},
+    command = "jobafkfarm",
+    max = 99,
+    salary = 0,
+    admin = 0, 
+    category = "AFK",
+    -- customCheck = function(ply)
+    --   local time = tonumber(os.date("%H"))
+    --   return time >= 21 or time <= 11
+    -- end,
+    -- CustomCheckFailMsg = "Vous ne pouvez pas rejoindre ce job à cette heure là",
+})
+
+--darkrpmodification-master\lua\darkrp_customthings/categories.lua
+
+DarkRP.createCategory{
+    name = "AFK",
+    categorises = "jobs",
+    startExpanded = true,
+    color = Color(219, 151, 45, 255),
+    sortOrder = 85
+}
